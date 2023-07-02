@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/datos', async (req, res) => {
   try {
     // Realiza la solicitud a la ESP8266
-    const response = await axios.get('http://http://192.168.68.118/datos');
+    const response = await axios.get('http://192.168.68.118/datos');
     
     // Obtiene los datos de la respuesta
     const datos = response.data;
@@ -25,7 +25,7 @@ router.post('/enviar-datos', async (req, res) => {
     const { datos } = req.body;
 
     // Realiza la solicitud POST a la ESP8266
-    await axios.post('http://direccion-de-la-esp8266/api/enviar-datos', { datos });
+    await axios.post('http://192.168.68.118/api/enviar-datos', { datos });
 
     // Envía una respuesta exitosa
     res.json({ mensaje: 'Datos enviados correctamente a la ESP8266' });
@@ -41,7 +41,7 @@ router.put('/actualizar-datos', async (req, res) => {
     const { nuevosDatos } = req.body;
 
     // Realiza la solicitud PUT a la ESP8266
-    await axios.put('http://direccion-de-la-esp8266/api/actualizar-datos', { nuevosDatos });
+    await axios.put('http://192.168.68.118/api/actualizar-datos', { nuevosDatos });
 
     // Envía una respuesta exitosa
     res.json({ mensaje: 'Datos actualizados correctamente en la ESP8266' });
