@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/datos', async (req, res) => {
   try {
     // Realiza la solicitud a la ESP8266
-    const response = await axios.get('http://direccion-de-la-esp8266/api/datos');
+    const response = await axios.get('http://http://192.168.68.118/datos');
     
     // Obtiene los datos de la respuesta
     const datos = response.data;
